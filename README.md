@@ -50,3 +50,13 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+## Answers
+
+My implementation of TSP-Local-Search runs in $\Theta(|V|^2)$ time. First it generates the initial route which is a single for loop putting elemnts into an array which takes $|V|$ time. My next step uses my calculateDistance function which runs in $|V|$ time as ot's only a single for loop. Next we are put in a while loop that runs $2 \cdot |V|$ times or asymptotically $|V|$ times. Inside the whle loop I run the swap function which takes $|V|$ time to reverse the middle area. Immediatly afterwards calcualteDistance is called again and that runs in $|V|$. We then increment the while loop which is a constant time. Altogether this is a time of $|V| + |V| + |V| \cdot (|V| + |V|) \in \Theta(|V|^2)$
+
+My implementation of TSP-Local-Search runs in $\Theta(|V|^2)$ memory. First it generates the current route which takes $|V|$. My calcualte distance function only increases space my a constant amount. Inside the while loop we need constant amount of space for my random numbers. My swap function uses $|V|$ extra space as it splits into approcamatly $\frac{|V|}{3}$ chunks but there are 3 of them. This means that my memory uses a total of $|V| + |V| \in \Theta(|V|)$ space.
+
+## Sources
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
