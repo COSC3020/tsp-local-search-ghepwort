@@ -55,7 +55,7 @@ reasoning, to this markdown file.
 
 My implementation of TSP-Local-Search runs in $\Theta(|V|^2)$ time. First it generates the initial route which is a single for loop putting elemnts into an array which takes $|V|$ time. My next step uses my calculateDistance function which runs in $|V|$ time as ot's only a single for loop. Next we are put in a while loop that runs $2 \cdot |V|$ times or asymptotically $|V|$ times. Inside the whle loop I run the swap function which takes $|V|$ time to reverse the middle area. Immediatly afterwards calcualteDistance is called again and that runs in $|V|$. We then increment the while loop which is a constant time. Altogether this is a time of $|V| + |V| + |V| \cdot (|V| + |V|) \in \Theta(|V|^2)$
 
-My implementation of TSP-Local-Search runs in $\Theta(|V|^2)$ memory. First it generates the current route which takes $|V|$. My calcualte distance function only increases space my a constant amount. Inside the while loop we need constant amount of space for my random numbers. My swap function uses $|V|$ extra space as it splits into approcamatly $\frac{|V|}{3}$ chunks but there are 3 of them. This means that my memory uses a total of $|V| + |V| \in \Theta(|V|)$ space.
+My implementation of TSP-Local-Search runs in $\Theta(|V|)$ memory. First it generates the current route which takes $|V|$. My calcualte distance function only increases space my a constant amount. Inside the while loop we need constant amount of space for my random numbers. My swap function uses $|V|$ extra space as it splits into approcamatly $\frac{|V|}{3}$ chunks but there are 3 of them. This means that my memory uses a total of $|V| + |V| \in \Theta(|V|)$ space.
 
 ## Sources
 
