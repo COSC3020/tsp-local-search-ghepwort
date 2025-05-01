@@ -2,7 +2,8 @@ function tsp_ls(distance_matrix) {
 
     n = distance_matrix.length;
 
-    if (n <= 1) return "Hello World"
+    if (n == 1) return 0;
+
 
     let currentRoute = [];
     for (i = 0; i < n; i++)
@@ -15,8 +16,12 @@ function tsp_ls(distance_matrix) {
     termValue = 0;
     possibleRoute = [];
     while (termValue < n * 2) {
+
+        // Pick two random numbers
         a = Math.floor(Math.random() * n);
         b = Math.floor(Math.random() * n);
+
+        // Ensures the smaller is the first input
         if (a < b) {
             possibleRoute = swap(currentRoute, a, b);
             possibleDistance = calculateDistance(currentRoute, distance_matrix);
@@ -83,11 +88,3 @@ function calculateDistance(route, distance_matrix) {
 
 
 
-// dm = [[0, 3, 4, 2, 7],
-// [3, 0, 4, 6, 3],
-// [4, 4, 0, 5, 8],
-// [2, 6, 5, 0, 6],
-// [7, 3, 8, 6, 0]];
-
-
-// console.log(tsp_ls(dm));
