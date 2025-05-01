@@ -60,11 +60,11 @@ function swap(route, i, k) {
 
     // First and third part dont change
     let route1 = route.slice(0, i);
-    let route2 = route.slic
+    let route2 = route.slice(i, k + 1);
+    let route3 = route.slice(k + 1)
+
     // Flip the middle
     route2 = route2.reverse();
-    e(i, k + 1);
-    let route3 = route.slice(k + 1)
 
     // Obscure JS functions for the win!!!
     return [...route1, ...route2, ...route3];
